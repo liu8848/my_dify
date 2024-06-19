@@ -4,6 +4,9 @@ import dotenv
 dotenv.load_dotenv()
 
 DEFAULTS = {
+    # 必需参数
+    'DEPLOY_ENV': 'PRODUCTION',
+
     'DB_USERNAME': 'postgres',
     'DB_PASSWORD': 'sudalu929',
     'DB_HOST': 'localhost',
@@ -30,6 +33,9 @@ def get_bool_env(key):
 
 class Config:
     def __init__(self):
+        self.CURRENT_VERSION = "1.0.0"
+        self.DEPLOY_ENV = get_env('DEPLOY_ENV')
+
         # ----------------------
         # 数据库配置
         # ----------------------

@@ -14,6 +14,12 @@ from models import (
     account,
 )
 
+from models.entities.app import (
+    app_entity,
+    app_model_config,
+    site
+)
+
 
 class DifyApp(Flask):
     pass

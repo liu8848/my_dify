@@ -91,7 +91,7 @@ class Tenant(db.Model):
         db.PrimaryKeyConstraint('id', name='tenant_pkey'),
     )
 
-    id = db.Column(StringUUID, server_default=db.text('uuid_generate_v4()'))
+    id = db.Column(StringUUID, server_default=db.text('gen_random_uuid()'))
     name = db.Column(db.String(255), nullable=False)
     encrypt_public_key = db.Column(db.Text)
     plan = db.Column(db.String(255), nullable=False, server_default=db.text("'basic'::character varying"))

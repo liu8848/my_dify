@@ -4,6 +4,8 @@ from typing import Optional
 
 from pydantic import BaseModel
 
+from core.extension.extensible import Extensible, ExtensionModule
+
 
 class ModerationAction(Enum):
     DIRECT_OUTPUT = 'direct_output'
@@ -25,4 +27,5 @@ class ModerationOutResult(BaseModel):
     text: str = ""
 
 
-class Moderation(Extensible,ABC):
+class Moderation(Extensible, ABC):
+    module: ExtensionModule = ExtensionModule.MODERATION
